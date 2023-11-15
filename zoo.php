@@ -70,30 +70,24 @@ $db_user = '2631595336';
 $db_password = 'vfHP4&V4+IvJQ';
 $db_name = 'mareninova_anastasiya';
 
-$mysqli = new mysqli($host, $db_user, $db_password, $db_name);
-if ($mysqli->connect_error) {
-    die('Ошибка подключения (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
-}
-echo 'Соединение установлено... ' . $mysqli->host_info;
-$mysqli->close();
+// $mysqli = new mysqli($host, $db_user, $db_password, $db_name);
+// if ($mysqli->connect_error) {
+//     die('Ошибка подключения (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+// }
+// echo 'Соединение установлено... ' . $mysqli->host_info;
+// $mysqli->close();
 ?> 
 
 <h2>Форма регистрации</h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-    <label for="full_name">имя:</label>
-    <input type="text" name="full_name" required>
+    <label for="login">Логин:</label>
+    <input type="text" name="login" required>
     <br>
-    <label for="full_name">отчество:</label>
-    <input type="text" name="full_name" required>
-    <br>
-    <label for="full_name">фамилия:</label>
-    <input type="text" name="full_name" required>
+    <label for="password">Пароль:</label>
+    <input type="password" name="password" required>
     <br>
     <label for="phone_number">Номер телефона:</label>
     <input type="text" name="phone_number" required>
-    <br>
-    <label for="email">Электронная почта:</label>
-    <input type="email" name="email" required>
     <br>
     <input type="submit" value="Зарегистрироваться">
     <?php echo $registrationMessage; ?>
