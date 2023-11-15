@@ -64,11 +64,18 @@
     </style>
 </head>
 <body>
+
 <?php
 $host = 'localhost'; 
 $db_user = '2631595336';
 $db_password = 'vfHP4&V4+IvJQ';
 $db_name = 'mareninova_anastasiya';
+
+if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
+    echo 'We don\'t have mysqli!!!';
+} else {
+    echo 'Phew we have it!';
+}
 
 // $mysqli = new mysqli($host, $db_user, $db_password, $db_name);
 // if ($mysqli->connect_error) {
@@ -76,7 +83,7 @@ $db_name = 'mareninova_anastasiya';
 // }
 // echo 'Соединение установлено... ' . $mysqli->host_info;
 // $mysqli->close();
-?> 
+// ?> 
 
 <h2>Форма регистрации</h2>
 <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -94,7 +101,7 @@ $db_name = 'mareninova_anastasiya';
 </form>
 
 
-<!-- 
+
 <?php if (!empty($users)) : ?>
     <h2>Список зарегистрированных пользователей</h2>
     <table>
@@ -111,7 +118,7 @@ $db_name = 'mareninova_anastasiya';
             </tr>
         <?php endforeach; ?>
     </table>
-<?php endif; ?> -->
+<?php endif; ?>
 
 </body>
 </html>
